@@ -299,6 +299,9 @@ body, div, ul, nav, header, footer, a, li, label{
     max-height: 270px;
 }
 
+.main__wrapper__service__boxes-item p{
+    justify-self: end;
+}
 
 #mas__informacion{
     font-weight: 700;
@@ -325,16 +328,18 @@ body, div, ul, nav, header, footer, a, li, label{
 
     .main__wrapper__service-description {
         max-width: 330px; /* Ajuste para pantallas grandes */
+        margin-left: 60px;
     }
 
     .main__wrapper__service-boxes { 
-        grid-template-columns: repeat(3, 1fr); 
+        margin-right: 100px;
+        grid-template-columns: repeat(2, 1fr); 
         grid-auto-rows: minmax(200px, auto); /* Controla la altura mínima de las filas */
         /* Máximo 3 columnas en pantallas grandes */
     }
 
     .main__wrapper__service__boxes-item {
-        min-width: 270px; /* Aumenta el tamaño mínimo de las cajas */
+        min-width: 300px; /* Aumenta el tamaño mínimo de las cajas */
         min-height: 200px;
     }
 }
