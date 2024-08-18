@@ -367,7 +367,8 @@ body, div, ul, nav, header, footer, a, li, label{
 }
 
 .main__wrapper-contact input,
-.main__wrapper-contact button {
+.main__wrapper-contact button, 
+.main__wrapper-contact textarea{
     width: 100%;
     margin: 10px 0; /* Ajusta el margen para los inputs y botón */
     margin-top: 20px;
@@ -378,6 +379,16 @@ body, div, ul, nav, header, footer, a, li, label{
     border: none;
     color: #099018;
 }
+
+.main__wrapper-contact textarea{
+    resize: none;
+    padding: 14px;
+    font-weight: 6px;
+    font-family: 'Montserrat', sans-serif;
+    padding-left: 25px;
+    min-height: 200px;
+}
+
 
 /* Estilo cuando los inputs y botones están enfocados */
 .main__wrapper-contact input:focus,
@@ -390,6 +401,9 @@ body, div, ul, nav, header, footer, a, li, label{
     color: #FFFFFF;
     border: none;
     cursor: pointer;
+    width: 35%;
+    justify-self: center;
+    align-self: center;
 }
 
 .main__wrapper-contact h2 {
