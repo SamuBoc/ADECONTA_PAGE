@@ -21,6 +21,7 @@ body, div, ul, nav, header, footer, a, li, label{
     container-name: header;
     position: sticky;
     top:0;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 .header a{
     display: flex;
@@ -116,8 +117,7 @@ body, div, ul, nav, header, footer, a, li, label{
 /* ----- END QUERIES ------ */
 
 
-/* -----  BLOCK CONSTRUTION SECTION ---- */
-
+/* ----- BLOCK CONSTRUCTION SECTION ---- */
 
 .main {
     background-repeat: no-repeat;
@@ -127,9 +127,10 @@ body, div, ul, nav, header, footer, a, li, label{
     align-items: center; /* Centra el contenido verticalmente */
     justify-content: center; /* Centra el contenido horizontalmente */
     container-type: inline-size; /* Definimos el contenedor para las consultas */
-    container-name: construccion;
     z-index: 1;
-    padding-top: 70px;
+    container-name: construccion;
+    opacity: 0; /* Inicialmente opaco */
+    animation: fadeIn 0.5s ease forwards; /* Animación de desvanecimiento */
 }
 
 .modal_warning {
@@ -143,6 +144,19 @@ body, div, ul, nav, header, footer, a, li, label{
     padding: 2rem; /* Ajustar padding para espacios internos */
     border-radius: 20px; /* Bordes redondeados */
     max-width: 100%; /* Asegura que el contenedor no se desborde */
+    opacity: 0; /* Inicialmente opaco */
+    animation: fadeIn 0.5s ease forwards; /* Animación de desvanecimiento */
+    margin-top: 10rem;
+}
+
+/* Animación de desvanecimiento */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 .modal_warning img {
@@ -150,15 +164,24 @@ body, div, ul, nav, header, footer, a, li, label{
     max-width: 100%; /* Asegura que la imagen no se desborde */
 }
 
-.modal_warning button {
+.btn {
+    display: inline-block;
     padding: 1rem;
     border-radius: 15px;
     border: none;
     background-color: #099018;
-    width: 10rem;
-    box-sizing: border-box; /* Asegura que el padding no afecte el tamaño total */
     color: #ffffff;
-    min-width: 50%;
+    text-align: center;
+    min-width: 10rem;
+    box-sizing: border-box; /* Asegura que el padding no afecte el tamaño total */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    text-decoration: none; /* Elimina el subrayado del enlace */
+    font-size: 1rem; /* Ajusta el tamaño de la fuente */
+    transition: background-color 0.3s ease; /* Transición suave para el color de fondo */
+}
+
+.btn:hover {
+    background-color: #087a14; /* Color de fondo al pasar el mouse */
 }
 
 /* ----- BLOCK CONSTRUCTION QUERIES ------ */
@@ -175,7 +198,7 @@ body, div, ul, nav, header, footer, a, li, label{
         width: 20rem; /* Reducir el tamaño de la imagen */
     }
 
-    .modal_warning button {
+    .btn {
         width: 8rem; /* Reducir el ancho del botón */
     }
 }
@@ -194,10 +217,9 @@ body, div, ul, nav, header, footer, a, li, label{
         width: 15rem; /* Reducir el tamaño de la imagen */
     }
 
-    .modal_warning button {
+    .btn {
         width: 7rem; /* Reducir el ancho del botón */
     }
 }
-
 
 /* ----- END QUERIES ------ */
