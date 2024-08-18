@@ -1,0 +1,203 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+}
+
+/* -----  HEADER SECTION ---- */
+
+body, div, ul, nav, header, footer, a, li, label{
+    padding: 0;
+    margin: 0;
+}
+
+.header{
+    display: flex;
+    background-color: #FFFFFF;
+    justify-content: space-between;
+    align-items: center;
+    container-type: inline-size; /* Definimos el contenedor para las consultas */
+    container-name: header;
+    position: sticky;
+    top:0;
+}
+.header a{
+    display: flex;
+}
+
+.header__open-nav-button{
+    font-size: 3rem;
+    font-weight: 600;
+    position: absolute;
+    right: 40px;
+}
+
+.header__checkbox{
+    display: none;
+}
+
+.header__nav-list{
+    display: flex;
+    flex-direction: column;
+    height: 40vh;
+    margin: auto;
+    justify-content: space-evenly;  
+}
+
+.header__nav{
+    display: none;
+    background-color: #FFFFFF;
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    z-index: -1;
+}
+
+.header__checkbox:checked ~ .header__nav{
+    display: flex;
+}
+
+.header__logo{
+    max-width: 100%;
+    width: 200px;
+    margin: 10px 20px;
+    cursor: pointer;  /* Cambia el cursor a una mano al pasar sobre el logo */
+    transition: transform 0.3s ease;  /* Suaviza la transición al pasar el mouse */
+}
+
+
+.header__nav-item{
+    list-style: none;
+}
+
+.header__nav-item a{
+    text-decoration:none;
+    color: #099018;
+}
+
+.header__nav-item a:is(:active,:hover){
+    text-decoration: underline;
+}
+
+.header__logo-container img{
+    height: 80px;
+}
+
+
+
+/* ----- HEADER QUERIES ------ */
+
+
+@container header (min-width: 750px){
+    .header__nav{
+        display: block;
+        position: static;
+        height: auto;
+        justify-content: space-evenly;
+        width: auto;
+    }
+
+    .header__nav-list{
+        flex-direction: row;
+        height: auto;
+        gap: 20px;
+        margin-right: 40px;
+    }
+
+    .header__open-nav-button{
+        display: none;
+    }
+
+}
+
+
+/* ----- END QUERIES ------ */
+
+
+/* -----  BLOCK CONSTRUTION SECTION ---- */
+
+
+.main {
+    background-repeat: no-repeat;
+    width: 100%; /* 100% del ancho de la ventana */
+    height: 80vh; /* 80% de la altura de la ventana */
+    display: flex; /* Usar flex para centrar contenido si es necesario */
+    align-items: center; /* Centra el contenido verticalmente */
+    justify-content: center; /* Centra el contenido horizontalmente */
+    container-type: inline-size; /* Definimos el contenedor para las consultas */
+    container-name: construccion;
+    z-index: 1;
+    padding-top: 70px;
+}
+
+.modal_warning {
+    display: flex;
+    background-color: #fffffff3;
+    flex-direction: row;
+    gap: 10rem;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    padding: 2rem; /* Ajustar padding para espacios internos */
+    border-radius: 20px; /* Bordes redondeados */
+    max-width: 100%; /* Asegura que el contenedor no se desborde */
+}
+
+.modal_warning img {
+    width: 25rem;
+    max-width: 100%; /* Asegura que la imagen no se desborde */
+}
+
+.modal_warning button {
+    padding: 1rem;
+    border-radius: 15px;
+    border: none;
+    background-color: #099018;
+    width: 10rem;
+    box-sizing: border-box; /* Asegura que el padding no afecte el tamaño total */
+    color: #ffffff;
+    min-width: 50%;
+}
+
+/* ----- BLOCK CONSTRUCTION QUERIES ------ */
+
+/* Para pantallas <= 900px */
+@media (max-width: 900px) {
+    .modal_warning {
+        flex-direction: column; /* Cambiar a columna en pantallas pequeñas */
+        gap: 2rem; /* Reducir el espacio entre elementos */
+        padding: 1rem; /* Reducir el padding interno */
+    }
+
+    .modal_warning img {
+        width: 20rem; /* Reducir el tamaño de la imagen */
+    }
+
+    .modal_warning button {
+        width: 8rem; /* Reducir el ancho del botón */
+    }
+}
+
+/* Para pantallas <= 600px */
+@media (max-width: 600px) {
+    .main {
+        height: 60vh; /* Ajustar altura para pantallas más pequeñas */
+    }
+
+    .modal_warning {
+        padding: 0.5rem; /* Reducir el padding interno aún más */
+    }
+
+    .modal_warning img {
+        width: 15rem; /* Reducir el tamaño de la imagen */
+    }
+
+    .modal_warning button {
+        width: 7rem; /* Reducir el ancho del botón */
+    }
+}
+
+
+/* ----- END QUERIES ------ */
