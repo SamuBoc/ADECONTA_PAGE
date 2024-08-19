@@ -21,7 +21,6 @@ body, div, ul, nav, header, footer, a, li, label{
     container-name: header;
     position: sticky;
     top:0;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 .header a{
     display: flex;
@@ -68,6 +67,9 @@ body, div, ul, nav, header, footer, a, li, label{
     transition: transform 0.3s ease;  /* Suaviza la transición al pasar el mouse */
 }
 
+.header__logo-container img{
+    height: 100px;
+}
 
 .header__nav-item{
     list-style: none;
@@ -80,10 +82,6 @@ body, div, ul, nav, header, footer, a, li, label{
 
 .header__nav-item a:is(:active,:hover){
     text-decoration: underline;
-}
-
-.header__logo-container img{
-    height: 80px;
 }
 
 
@@ -116,7 +114,6 @@ body, div, ul, nav, header, footer, a, li, label{
 
 /* ----- END QUERIES ------ */
 
-
 /* ----- BLOCK CONSTRUCTION SECTION ---- */
 
 .main {
@@ -127,7 +124,6 @@ body, div, ul, nav, header, footer, a, li, label{
     align-items: center; /* Centra el contenido verticalmente */
     justify-content: center; /* Centra el contenido horizontalmente */
     container-type: inline-size; /* Definimos el contenedor para las consultas */
-    z-index: 1;
     container-name: construccion;
     opacity: 0; /* Inicialmente opaco */
     animation: fadeIn 0.5s ease forwards; /* Animación de desvanecimiento */
@@ -146,7 +142,7 @@ body, div, ul, nav, header, footer, a, li, label{
     max-width: 100%; /* Asegura que el contenedor no se desborde */
     opacity: 0; /* Inicialmente opaco */
     animation: fadeIn 0.5s ease forwards; /* Animación de desvanecimiento */
-    margin-top: 10rem;
+    margin-top: 5rem;
 }
 
 /* Animación de desvanecimiento */
@@ -178,6 +174,7 @@ body, div, ul, nav, header, footer, a, li, label{
     text-decoration: none; /* Elimina el subrayado del enlace */
     font-size: 1rem; /* Ajusta el tamaño de la fuente */
     transition: background-color 0.3s ease; /* Transición suave para el color de fondo */
+    margin-top: 20px;
 }
 
 .btn:hover {
@@ -204,7 +201,7 @@ body, div, ul, nav, header, footer, a, li, label{
 }
 
 /* Para pantallas <= 600px */
-@media (max-width: 600px) {
+@media (max-width: 400px) {
     .main {
         height: 60vh; /* Ajustar altura para pantallas más pequeñas */
     }
