@@ -21,6 +21,7 @@ body, div, ul, nav, header, footer, a, li, label{
     container-name: header;
     position: sticky;
     top:0;
+    box-shadow: 0 0.4px 0.2px rgba(0, 0, 0, 0.3);
 }
 .header a{
     display: flex;
