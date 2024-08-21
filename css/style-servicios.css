@@ -1,8 +1,9 @@
-body{
+body {
     margin: 0;
     padding: 0;
     font-family: 'Montserrat', sans-serif;
     font-size: 16px;
+    overflow-x: hidden; /* Ocultar barra horizontal */
 }
 
 /* -----  HEADER SECTION ---- */
@@ -117,107 +118,71 @@ body, div, ul, nav, header, footer, a, li, label{
 
 /* ----- BLOCK CONSTRUCTION SECTION ---- */
 
-.main {
-    background-repeat: no-repeat;
-    width: 100%; /* 100% del ancho de la ventana */
-    height: 80vh; /* 80% de la altura de la ventana */
-    display: flex; /* Usar flex para centrar contenido si es necesario */
-    align-items: center; /* Centra el contenido verticalmente */
-    justify-content: center; /* Centra el contenido horizontalmente */
-    container-type: inline-size; /* Definimos el contenedor para las consultas */
-    container-name: construccion;
-    opacity: 0; /* Inicialmente opaco */
-    animation: fadeIn 0.5s ease forwards; /* Animación de desvanecimiento */
-}
 
-.modal_warning {
+.main__wrapper{
     display: flex;
-    background-color: #fffffff3;
-    flex-direction: row;
-    gap: 10rem;
+    width: 100vw;
+    height: 70vh;
     align-items: center;
     justify-content: center;
-    margin: auto;
-    padding: 2rem; /* Ajustar padding para espacios internos */
-    border-radius: 20px; /* Bordes redondeados */
-    max-width: 100%; /* Asegura que el contenedor no se desborde */
-    opacity: 0; /* Inicialmente opaco */
-    animation: fadeIn 0.5s ease forwards; /* Animación de desvanecimiento */
-    margin-top: 5rem;
+    flex-wrap: wrap;
 }
 
-/* Animación de desvanecimiento */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+/* CONTENEDORES DE IMAGENES */
+.main__wrapper-img{
+    min-width: 350px;
+    min-height: 325px;
+    background-image: url(/img/banner_coming_soon.png);
+    margin: 0px 20px 0px 20px;
+    background-position: center;
+    background-size: cover;
+    margin-bottom: 0px;
+    margin-top: 10px;
 }
 
-.modal_warning img {
-    width: 25rem;
-    max-width: 100%; /* Asegura que la imagen no se desborde */
+.main__wrapper__coming-son__img{
+    width: 320px;
+    max-width: 400px;
+    height: 100px;
+    background-image: url(/img/color_coming_soon.png);
+    background-position: center;
+    background-size: cover;
+}
+
+/* CONTENEDOR COMING SOON SECUNDARIO */
+.main__wrapper-coming-soon{
+    margin: 20px;
+    margin-top: 0px;
 }
 
 .btn {
-    display: inline-block;
     padding: 1rem;
     border-radius: 15px;
     border: none;
-    background-color: #099018;
-    color: #ffffff;
+    background: #099018;
+    color: #fff;
     text-align: center;
     min-width: 10rem;
-    box-sizing: border-box; /* Asegura que el padding no afecte el tamaño total */
-    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
-    text-decoration: none; /* Elimina el subrayado del enlace */
-    font-size: 1rem; /* Ajusta el tamaño de la fuente */
-    transition: background-color 0.3s ease; /* Transición suave para el color de fondo */
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 1rem;
     margin-top: 20px;
-}
-
-.btn:hover {
-    background-color: #087a14; /* Color de fondo al pasar el mouse */
 }
 
 /* ----- BLOCK CONSTRUCTION QUERIES ------ */
 
-/* Para pantallas <= 900px */
-@media (max-width: 900px) {
-    .modal_warning {
-        flex-direction: column; /* Cambiar a columna en pantallas pequeñas */
-        gap: 2rem; /* Reducir el espacio entre elementos */
-        padding: 1rem; /* Reducir el padding interno */
+@media (min-width: 900px){
+    .main__wrapper{
+        width: 100vw;
+        height: 70vh;
     }
 
-    .modal_warning img {
-        width: 20rem; /* Reducir el tamaño de la imagen */
+    .main__wrapper-img{
+        min-width: 430px;
+        min-height: 400px;
     }
 
-    .btn {
-        width: 8rem; /* Reducir el ancho del botón */
-    }
 }
+  
 
-/* Para pantallas <= 600px */
-@media (max-width: 400px) {
-    .main {
-        height: 60vh; /* Ajustar altura para pantallas más pequeñas */
-    }
-
-    .modal_warning {
-        padding: 0.5rem; /* Reducir el padding interno aún más */
-    }
-
-    .modal_warning img {
-        width: 15rem; /* Reducir el tamaño de la imagen */
-    }
-
-    .btn {
-        width: 7rem; /* Reducir el ancho del botón */
-    }
-}
-
-/* ----- END QUERIES ------ */
+/* Animación de desvanecimiento */
