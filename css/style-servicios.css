@@ -147,6 +147,7 @@ body, div, ul, nav, header, footer, a, li, label{
     background-image: url(/img/color_coming_soon.png);
     background-position: center;
     background-size: cover;
+    aspect-ratio: 16/9;
 }
 
 /* CONTENEDOR COMING SOON SECUNDARIO */

@@ -313,6 +313,7 @@ body, div, ul, nav, header, footer, a, li, label{
     justify-self: end;
 }
 
+
 #mas__informacion{
     font-weight: 700;
 }
@@ -420,12 +421,62 @@ body, div, ul, nav, header, footer, a, li, label{
 .main__wrapper-contact h2 {
     margin-bottom: 20px; /* Espacio entre el título y los inputs */
     color: #099018;
+    font-size: 3vw;
 }
 /* ----- END CONTACT SECTION ------ */
 
 
-/* ----- CONTACT QUERIES ------ */
+/* ----- US SECTION ------ */
+.main__wrapper-us {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.10), rgba(0, 0, 0, 0.10)), url(/img/revistas_banner.png);
+    background-size: 170%; /* Tamaño del zoom para pantallas grandes */
+    background-position: left center; /* Ajusta la imagen hacia el lado izquierdo */
+    height: 750px;
+    display: flex;
+    background-repeat: no-repeat;
+    flex-direction: row;
+    flex: 1;
+}
 
+.main__wrapper__us-text {
+    padding: 15vh 70vw 15vh 5vw; /* Unidades relativas a la ventana */
+}
 
+.main__wrapper__us-text h1{
+    color: #FFFFFF;
+    font-size: 60px;
+}
 
-/* ----- END CONTACT QUERIES ------ */
+.main__wrapper__us-text p{
+    color: #FFFFFF;
+    padding-bottom: 120vh;
+    line-height: normal;
+}
+
+@media (max-width: 800px) {
+    .main__wrapper__us-text {
+        background-size: cover;
+        padding: 2vh 6vh 0vh 6vh; /* Aplica vh de padding vertical */
+    }
+    
+    .main__wrapper__us-text h1{
+        margin: auto;
+    }
+
+    .main__wrapper__us-text p{
+        line-height: normal;
+        padding-bottom: 0px;
+    }
+
+    .main__wrapper-us {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.30), rgba(0, 0, 0, 0.30)), url(/img/revistas_banner.png);
+         /* Tamaño del zoom para pantallas grandes */
+        background-position: center; /* Ajusta la imagen hacia el lado izquierdo */
+        min-height: 545px;
+        display: flex;
+        background-repeat: no-repeat;
+        flex-direction: row;
+        flex: 1;
+        background-color: #008a2a;
+    }
+}
