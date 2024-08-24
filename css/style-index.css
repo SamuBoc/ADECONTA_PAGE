@@ -123,6 +123,7 @@ body, div, ul, nav, header, footer, a, li, label{
     display: flex;
     container-name: banner;
     min-height: 100rem;
+    max-height: 100rem;
 }
 
 .main__wrapper{
@@ -198,6 +199,7 @@ body, div, ul, nav, header, footer, a, li, label{
     align-items: center; /* Asegura que los elementos se alineen verticalmente al centro */
     height: 40vh;
     z-index: -2;
+    min-height: 15rem;
 }
 
 .main__wrapper__presentation-title,
@@ -436,6 +438,7 @@ body, div, ul, nav, header, footer, a, li, label{
     background-repeat: no-repeat;
     flex-direction: row;
     flex: 1;
+    min-height: 55rem;
 }
 
 .main__wrapper__us-text {
