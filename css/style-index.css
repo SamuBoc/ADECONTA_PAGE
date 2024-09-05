@@ -387,7 +387,7 @@ body, div, ul, nav, header, footer, a, li, label{
     text-align: center; /* Asegura que el texto del h1 esté centrado */
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1000px) {
     .main__wrapper-us{
         background-size: 170%;
         background-position: left;
@@ -505,3 +505,91 @@ body, div, ul, nav, header, footer, a, li, label{
 }
 
 /* END QUERIES CONTACT SECTION */
+
+/* --- FOOTER STYLES --- */
+
+/* Estilos generales para el footer */
+.main__wrapper-footer {
+    background-color: rgba(9, 144, 24, 1); /* Fondo verde */
+    padding: 20px;
+    color: white;
+}
+
+/* Contenedor principal que agrupa el menú y los iconos */
+.main__wrapper__footer-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px 0;
+}
+
+/* Estilos para el menú */
+.main__wrapper__footer-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.main__wrapper__footer__ul-li {
+    margin-bottom: 10px;
+    font-weight: 300;
+    font-size: 16px;
+    color: white;
+    margin: 10px 20px;
+    transition-duration: 0.3s;
+}
+
+.main__wrapper__footer__ul-li a {
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+.main__wrapper__footer__ul-li:hover{
+    cursor: pointer;
+    opacity: 0.6;
+}
+
+.main__wrapper__footer__ul-li:first-child {
+    font-weight: 700; /* El primer ítem del menú es más grueso */
+}
+
+/* Estilos para los iconos sociales */
+.main__wrapper__footer__social-ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    padding: 0;
+    margin: 10px 20px;
+}
+
+.main__wrapper__footer__social__ul-li img {
+    width: 24px; /* Tamaño de los iconos */
+    height: 24px;
+    transition-duration: 0.3s;
+}
+
+.main__wrapper__footer__social__ul-li img:hover{
+    cursor: pointer;
+    opacity: 0.6;
+}
+
+.main__wrapper__footer-divider {
+    border: none;
+    border-bottom: 4px solid #FFFFFF; /* Grosor de 4px, línea sólida y color blanco */
+    width: 90vw; /* Ajusta el ancho al 60% del contenedor */
+    margin: 20px auto; /* Centra el divisor horizontalmente */
+}
+
+.main__wrapper__footer-copyright{
+    margin: 10px 20px;
+}
+
+/* -- FOOTER MEDIA QUERIES --- */
+
+@media screen and (min-width: 1000px) {
+    .main__wrapper__footer-divider{
+        width: 95vw;
+    }
+}
+
+/* -- END FOOTER MEDIA QUERIES --- */
