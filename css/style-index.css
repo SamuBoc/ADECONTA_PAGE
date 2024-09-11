@@ -614,7 +614,6 @@ body, div, ul, nav, header, footer, a, li, label{
     font-size: 14px; /* Tamaño del texto */
     transition: background-color 0.3s ease;
     animation: breathe 2s infinite; /* Animación de respiración */
-    z-index: 1000; /* Asegura que el botón esté encima de otros elementos */
 }
 
 /* Estilo para el icono de WhatsApp */
