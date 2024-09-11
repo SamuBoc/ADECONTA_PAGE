@@ -27,7 +27,7 @@ body, div, ul, nav, header, footer, a, li, label{
     position: sticky;
     top:0;
     box-shadow: 0 0.4px 0.2px rgba(0, 0, 0, 0.1000);
-    min-width: 100vw;
+    width: 100vw;
 }
 .header a{
     display: flex;
@@ -67,7 +67,6 @@ body, div, ul, nav, header, footer, a, li, label{
 }
 
 .header__logo{
-    max-width: 100%;
     width: 200px;
     margin: 10px 20px;
     cursor: pointer;  /* Cambia el cursor a una mano al pasar sobre el logo */
