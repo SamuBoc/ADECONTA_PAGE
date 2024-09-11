@@ -597,6 +597,7 @@ body, div, ul, nav, header, footer, a, li, label{
 /* Estilos del botón de WhatsApp */
 .whatsapp-button {
     position: fixed;
+    margin-bottom: 15px;
     bottom: 20px;
     right: 20px;
     display: flex;
