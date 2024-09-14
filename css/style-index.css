@@ -24,8 +24,8 @@ body, div, ul, nav, header, footer, a, li, label{
     align-items: center;
     container-type: inline-size; /* Definimos el contenedor para las consultas */
     container-name: header;
-    position: sticky;
-    top:0;
+    /* position: sticky;
+    top:0; */
     box-shadow: 0 0.4px 0.2px rgba(0, 0, 0, 0.1000);
     width: 100vw;
 }
@@ -636,7 +636,7 @@ body, div, ul, nav, header, footer, a, li, label{
     }
     50% {
         transform: scale(1.05); /* Aumento de tamaño */
-        background-color: #005d26; /* Verde más oscuro */
+        background-color: #007a33; /* Verde más oscuro */
     }
     100% {
         transform: scale(1);
