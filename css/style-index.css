@@ -1,13 +1,18 @@
+/* ----- HEADER SECTION ----- */
+
+/* Ya que no usan las variables correctamente se tiene que poner la tipografia de la siguiente manera */
+
+*{
+    font-family: "Montserrat", sans-serif;
+}
+
 body{
     margin: 0;
     padding: 0;
     font-family: 'Montserrat', sans-serif;
     font-size: 16px;
-    overflow-x: hidden; /* ocultar barra horizontal */
-}
-
-.main{
-    max-width: 100vw;
+    overflow-x: hidden; /* ocultar barra horizontal */;
+    width: 100%;
 }
 
 /* -----  HEADER SECTION ---- */
@@ -27,7 +32,7 @@ body, div, ul, nav, header, footer, a, li, label{
     /* position: sticky;
     top:0; */
     box-shadow: 0 0.4px 0.2px rgba(0, 0, 0, 0.1000);
-    width: 100vw;
+    min-width: 100%;
 }
 .header a{
     display: flex;
@@ -74,7 +79,8 @@ body, div, ul, nav, header, footer, a, li, label{
 }
 
 .header__logo-container img{
-    height: 100px;
+    min-height: 100px;
+    width: 10rem;
 }
 
 .header__nav-item{
@@ -120,7 +126,15 @@ body, div, ul, nav, header, footer, a, li, label{
 
 /* ----- END QUERIES ------ */
 
+
 /* ----- BANNER SECTION ------ */
+
+/* Ya que no usan las variables correctamente se tiene que poner la tipografia de la siguiente manera */
+
+*{
+    font-family: "Montserrat", sans-serif;
+}
+
 
 .main{
     display: flex;
@@ -136,7 +150,7 @@ body, div, ul, nav, header, footer, a, li, label{
 }
 
 .banner__wrapper-container{
-    background-image: linear-gradient(rgba(0, 0, 0, 0.38),rgba(0, 0, 0, 0.38)),url(/img/banner_main.svg);     
+    background-image: linear-gradient(rgba(0, 0, 0, 0.38),rgba(0, 0, 0, 0.38)),url(../img/banner_main.svg);     
     background-size: cover;
     display: grid;
     height: 100vh;
@@ -176,24 +190,24 @@ body, div, ul, nav, header, footer, a, li, label{
    font-size: calc(4vw + 1.5rem);
 }
 
-/* ----- END BANNER SECTION ------ */
-
 @media screen and (max-width: 800px){
     .banner__wrapper-container{
         min-height:70vh;
     }
 }
 
-/* ----- BANNER QUERIES ------ */
+
+/* ----- END BANNER SECTION ------ */
+
+
 
 /* ----- PRESENTATION SECTION ------ */
 
-/* PRESENTATION SECTION */
 .main__wrapper-presentation {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    background-image: url(/img/banner_presentation.png);
+    background-image: url(../img/banner_presentation.png);
     background-size: cover;
     padding: 30px;
     container-type: inline-size;
@@ -239,7 +253,9 @@ body, div, ul, nav, header, footer, a, li, label{
 
 }
 
-/* END MEDIA QUERIES PRESENTATION */
+/* ---- END PRESENTATION ---- */
+
+
 
 /* ----- SERVICE SECTION ------ */
 
@@ -309,7 +325,7 @@ body, div, ul, nav, header, footer, a, li, label{
     margin: 10px 0px 20px 0px;
     margin-left: 3vh;
     text-align: center;
-    max-height: 270px;
+    min-height: 270px;
 }
 
 .main__wrapper__service__boxes-item p{
@@ -364,7 +380,7 @@ body, div, ul, nav, header, footer, a, li, label{
 /* US SECTION */
 
 .main__wrapper-us{
-    background-image: linear-gradient(rgba(9, 144, 25, 0.594) , rgba(9, 144, 24, 0.594)), url(/img/revistas_banner.png);
+    background-image: linear-gradient(rgba(9, 144, 25, 0.594) , rgba(9, 144, 24, 0.594)), url(../img/revistas_banner.png);
     min-height: auto;
     background-size: cover;
     background-position: center;
@@ -392,7 +408,7 @@ body, div, ul, nav, header, footer, a, li, label{
         background-position: left;
         justify-content: flex-start;
         align-items: flex-start;
-        background-image: linear-gradient(rgba(9, 144, 24, 0.3) , rgba(9, 144, 24, 0.3)), url(/img/revistas_banner.png);
+        background-image: linear-gradient(rgba(9, 144, 24, 0.3) , rgba(9, 144, 24, 0.3)), url(../img/revistas_banner.png);
 
     }
 
@@ -505,21 +521,26 @@ body, div, ul, nav, header, footer, a, li, label{
 
 /* END QUERIES CONTACT SECTION */
 
+
 /* --- FOOTER STYLES --- */
 
 /* Estilos generales para el footer */
 .main__wrapper-footer {
     background-color: rgba(9, 144, 24, 1); /* Fondo verde */
-    padding: 20px;
+    padding-bottom: 20px; /* Más espacio para mayor claridad */
     color: white;
+    min-width: 250px;
+    text-align: center; /* Centrar texto en pantallas pequeñas */
 }
 
 /* Contenedor principal que agrupa el menú y los iconos */
 .main__wrapper__footer-box {
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
+    flex-direction: column; /* Columnas en móviles */
+    justify-content: center;
+    align-items: center;
     padding: 20px 0;
+    gap: 30px; /* Separación entre secciones */
 }
 
 /* Estilos para el menú */
@@ -534,22 +555,22 @@ body, div, ul, nav, header, footer, a, li, label{
     font-weight: 300;
     font-size: 16px;
     color: white;
-    margin: 10px 20px;
-    transition-duration: 0.3s;
+    transition: opacity 0.3s ease;
 }
 
 .main__wrapper__footer__ul-li a {
     text-decoration: none;
     color: #FFFFFF;
+    transition: color 0.3s ease;
 }
 
-.main__wrapper__footer__ul-li:hover{
+.main__wrapper__footer__ul-li:hover {
     cursor: pointer;
-    opacity: 0.6;
+    opacity: 0.8;
 }
 
 .main__wrapper__footer__ul-li:first-child {
-    font-weight: 700; /* El primer ítem del menú es más grueso */
+    font-weight: 700; /* Destaca el primer ítem del menú */
 }
 
 /* Estilos para los iconos sociales */
@@ -558,40 +579,51 @@ body, div, ul, nav, header, footer, a, li, label{
     display: flex;
     gap: 15px;
     padding: 0;
-    margin: 10px 20px;
+    margin: 0;
 }
 
 .main__wrapper__footer__social__ul-li img {
-    width: 24px; /* Tamaño de los iconos */
-    height: 24px;
-    transition-duration: 0.3s;
+    width: 28px; /* Tamaño un poco mayor para mejor visibilidad */
+    height: 28px;
+    transition: opacity 0.3s ease;
 }
 
-.main__wrapper__footer__social__ul-li img:hover{
+.main__wrapper__footer__social__ul-li img:hover {
     cursor: pointer;
-    opacity: 0.6;
+    opacity: 0.8;
 }
 
+/* Divider (Separador) */
 .main__wrapper__footer-divider {
     border: none;
-    border-bottom: 4px solid #FFFFFF; /* Grosor de 4px, línea sólida y color blanco */
-    width: 90vw; /* Ajusta el ancho al 60% del contenedor */
+    border-bottom: 2px solid #FFFFFF; /* Grosor de 2px para un look más limpio */
+    width: 90%; /* Ajusta el ancho al 90% del contenedor */
     margin: 20px auto; /* Centra el divisor horizontalmente */
 }
 
-.main__wrapper__footer-copyright{
-    margin: 10px 20px;
+/* Copyright */
+.main__wrapper__footer-copyright {
+    margin: 10px 0;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.8); /* Texto un poco más suave */
 }
 
-/* -- FOOTER MEDIA QUERIES --- */
+/* --- MEDIA QUERIES --- */
+@media screen and (min-width: 768px) {
+    .main__wrapper__footer-box {
+        flex-direction: row; /* Coloca el menú y los iconos en fila en pantallas grandes */
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+    }
 
-@media screen and (min-width: 1000px) {
-    .main__wrapper__footer-divider{
-        width: 95vw;
+    .main__wrapper__footer-divider {
+        width: 95%; /* Ajuste de ancho para pantallas grandes */
     }
 }
 
-/* -- END FOOTER MEDIA QUERIES --- */
+
+/* --- WHAT BUTT0N */
 
 /* Estilos del botón de WhatsApp */
 .whatsapp-button {
