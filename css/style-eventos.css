@@ -249,7 +249,7 @@ body, div, ul, nav, header, footer, a, li, label{
 }
 
 .banner__wrapper-container{
-    background-image: linear-gradient(rgba(0, 0, 0, 0.38),rgba(0, 0, 0, 0.38)),url(/img/banner_eventos.svg);     
+    background-image: linear-gradient(rgba(0, 0, 0, 0.38),rgba(0, 0, 0, 0.38)),url(/img/banner_eventos.webp);     
     background-size: cover;
     display: grid;
     min-height: 300px;
@@ -301,6 +301,7 @@ body, div, ul, nav, header, footer, a, li, label{
     --light-gray: #F5F5F5;
     --text-color: #333333;
 }
+
 
 .events-grid {
     display: grid;
