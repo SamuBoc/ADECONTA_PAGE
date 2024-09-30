@@ -37,7 +37,6 @@ body, div, ul, nav, header, footer, a, li, label{
 .header a{
     display: flex;
 }
-
 .header__open-nav-button{
     font-size: 3rem;
     font-weight: 600;
@@ -127,6 +126,110 @@ body, div, ul, nav, header, footer, a, li, label{
 /* ----- END QUERIES ------ */
 
 
+/* --- FOOTER STYLES --- */
+
+/* Estilos generales para el footer */
+.main__wrapper-footer {
+    background-color: rgba(9, 144, 24, 1); /* Fondo verde */
+    padding-bottom: 20px; /* Más espacio para mayor claridad */
+    color: white;
+    min-width: 250px;
+    text-align: center; /* Centrar texto en pantallas pequeñas */
+}
+
+/* Contenedor principal que agrupa el menú y los iconos */
+.main__wrapper__footer-box {
+    display: flex;
+    flex-direction: column; /* Columnas en móviles */
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+    gap: 30px; /* Separación entre secciones */
+}
+
+/* Estilos para el menú */
+.main__wrapper__footer-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.main__wrapper__footer__ul-li {
+    margin-bottom: 10px;
+    font-weight: 300;
+    font-size: 16px;
+    color: white;
+    transition: opacity 0.3s ease;
+}
+
+.main__wrapper__footer__ul-li a {
+    text-decoration: none;
+    color: #FFFFFF;
+    transition: color 0.3s ease;
+}
+
+.main__wrapper__footer__ul-li:hover {
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+.main__wrapper__footer__ul-li:first-child {
+    font-weight: 700; /* Destaca el primer ítem del menú */
+}
+
+/* Estilos para los iconos sociales */
+.main__wrapper__footer__social-ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    padding: 0;
+    margin: 0;
+}
+
+.main__wrapper__footer__social__ul-li img {
+    width: 28px; /* Tamaño un poco mayor para mejor visibilidad */
+    height: 28px;
+    transition: opacity 0.3s ease;
+}
+
+.main__wrapper__footer__social__ul-li img:hover {
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+/* Divider (Separador) */
+.main__wrapper__footer-divider {
+    border: none;
+    border-bottom: 2px solid #FFFFFF; /* Grosor de 2px para un look más limpio */
+    width: 90%; /* Ajusta el ancho al 90% del contenedor */
+    margin: 20px auto; /* Centra el divisor horizontalmente */
+}
+
+/* Copyright */
+.main__wrapper__footer-copyright {
+    margin: 10px 0;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.8); /* Texto un poco más suave */
+}
+
+/* --- MEDIA QUERIES --- */
+@media screen and (min-width: 768px) {
+    .main__wrapper__footer-box {
+        flex-direction: row; /* Coloca el menú y los iconos en fila en pantallas grandes */
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+    }
+
+    .main__wrapper__footer-divider {
+        width: 95%; /* Ajuste de ancho para pantallas grandes */
+    }
+}
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+        
 /* ----- BANNER SECTION ------ */
 
 /* Ya que no usan las variables correctamente se tiene que poner la tipografia de la siguiente manera */
@@ -150,10 +253,10 @@ body, div, ul, nav, header, footer, a, li, label{
 }
 
 .banner__wrapper-container{
-    background-image: linear-gradient(rgba(0, 0, 0, 0.38),rgba(0, 0, 0, 0.38)),url(../img/banner_main.svg);     
+    background-image: linear-gradient(rgba(0, 0, 0, 0.372),rgba(0, 0, 0, 0.372)),url(../img/banner_main.svg);     
     background-size: cover;
     display: grid;
-    height: 100vh;
+    height: 130vh;
     background-position: center;
     place-content: center;
     justify-items: center;
@@ -163,7 +266,7 @@ body, div, ul, nav, header, footer, a, li, label{
     align-items: center; /* Centra horizontalmente el contenido */
      text-align: center; /* Alinea el texto al centro */
     color: #FFFFFF; /* Color del texto */
-    padding: 10 20px; /* Espaciado interno para evitar que el texto toque los bordes */
+    padding: 10px 20px; /* Espaciado interno para evitar que el texto toque los bordes */
     text-overflow: ellipsis;
 }
 
@@ -199,63 +302,125 @@ body, div, ul, nav, header, footer, a, li, label{
 
 /* ----- END BANNER SECTION ------ */
 
+        
 
 
-/* ----- PRESENTATION SECTION ------ */
+        .container h1{
+            font-size: calc(1.2vw + 1.5rem);
+        }
+        header {
+            background-color: #ffffff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+        }
+        .logo {
+            max-width: 150px;
+            padding: 15px 0;
+        }
+        .hero {
+            color: white;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: calc(3vw + 1.5rem);
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        .hero p {
+            font-size: 1.2em;
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+        .flyer-section {
+            background-color: #ffffff;
+            padding: 80px 0;
+        }
+        .flyer-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .flyer-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding: 80px 0;
+        }
+        .event-details, .speaker-info {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            padding: 40px;
+            margin-bottom: 40px;
+            flex-basis: calc(50% - 20px);
+        }
+        .event-details h2, .speaker-info h2 {
+            color: #4CAF50;
+            margin-bottom: 20px;
+        }
+        .event-meta {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+        .meta-item {
+            flex-basis: calc(50% - 10px);
+            margin-bottom: 20px;
+        }
+        .meta-item h3 {
+            font-size: 0.9em;
+            color: #888;
+            margin-bottom: 5px;
+        }
+        .meta-item p {
+            font-size: 1.1em;
+            font-weight: 600;
+        }
+        .price-info {
+            background-color: #f1f8e9;
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 30px;
+        }
+        .cta-button {
+            display: inline-block;
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            margin-top: 30px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .cta-button:hover {
+            background-color: #45a049;
+            transform: translateY(-2px);
+        }
+        .speaker-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+        }
+        @media (max-width: 768px) {
+            .event-details, .speaker-info {
+                flex-basis: 100%;
+            }
+        }
 
-.main__wrapper-presentation {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    background-image: url(../img/banner_presentation.png);
-    background-size: cover;
-    padding: 30px;
-    container-type: inline-size;
-    container-name: presentation;
-    background-position: center;
-    align-items: center; /* Asegura que los elementos se alineen verticalmente al centro */
-    min-height: auto;
-    z-index: -2;
-    padding-bottom: 2vh;
-    
-}
 
-.main__wrapper__presentation-title,
-.main__wrapper__presentation-text {
-    flex: 1 1 300px;
-    margin: 10px;
-    text-align: center;
-    
-}
-
-.main__wrapper__presentation-title h2 {
-    padding: 40px;
-    font-weight: 700;
-    color: #099018;
-    margin: 0;
-    font-size: calc(0.5vw + 1.5rem);
-}
-
-.main__wrapper__presentation-text p {
-    font-weight: 400;
-    padding: 40px;
-    margin: 0;
-    line-height: 3.5vh;
-}
-
-/* MEDIA QUERIES PRESENTATION */
-
-@media screen and (max-width: 800px){
-
-    .main__wrapper-presentation{
-        min-height: auto;
-    }
-
-}
-
-/* ---- END PRESENTATION ---- */
-
-
+        
 
 /* ----- SERVICE SECTION ------ */
 
@@ -680,3 +845,62 @@ body, div, ul, nav, header, footer, a, li, label{
 .whatsapp-button:hover {
     background-color: #005d26; /* Verde más oscuro para el hover */
 }
+
+
+
+/* ----- PRESENTATION SECTION ------ */
+
+.main__wrapper-presentation {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-image: url(../img/banner_presentation.png);
+    background-size: cover;
+    padding: 30px;
+    container-type: inline-size;
+    container-name: presentation;
+    background-position: center;
+    align-items: center; /* Asegura que los elementos se alineen verticalmente al centro */
+    min-height: auto;
+    z-index: -2;
+    padding-bottom: 2vh;
+    
+}
+
+.main__wrapper__presentation-title,
+.main__wrapper__presentation-text {
+    flex: 1 1 300px;
+    margin: 10px;
+    text-align: center;
+    
+}
+
+.main__wrapper__presentation-title h2 {
+    padding: 40px;
+    font-weight: 700;
+    color: #099018;
+    margin: 0;
+    font-size: calc(0.5vw + 1.5rem);
+}
+
+.main__wrapper__presentation-text p {
+    font-weight: 400;
+    padding: 40px;
+    margin: 0;
+    line-height: 3.5vh;
+}
+
+/* MEDIA QUERIES PRESENTATION */
+
+@media screen and (max-width: 800px){
+
+    .main__wrapper-presentation{
+        min-height: auto;
+    }
+
+}
+
+/* ---- END PRESENTATION ---- */
+
+
+

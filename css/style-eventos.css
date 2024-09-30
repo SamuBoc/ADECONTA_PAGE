@@ -37,7 +37,6 @@ body, div, ul, nav, header, footer, a, li, label{
 .header a{
     display: flex;
 }
-
 .header__open-nav-button{
     font-size: 3rem;
     font-weight: 600;
@@ -228,6 +227,9 @@ body, div, ul, nav, header, footer, a, li, label{
 }
 
 
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+        
 /* ----- BANNER SECTION ------ */
 
 /* Ya que no usan las variables correctamente se tiene que poner la tipografia de la siguiente manera */
@@ -240,6 +242,8 @@ body, div, ul, nav, header, footer, a, li, label{
 .main{
     display: flex;
     container-name: banner;
+    min-height: 100rem;
+    max-height: 100rem;
 }
 
 .main__wrapper{
@@ -249,10 +253,10 @@ body, div, ul, nav, header, footer, a, li, label{
 }
 
 .banner__wrapper-container{
-    background-image: linear-gradient(rgba(0, 0, 0, 0.38),rgba(0, 0, 0, 0.38)),url(/img/banner_eventos.webp);     
+    background-image: linear-gradient(rgba(0, 0, 0, 0.700),rgba(0, 0, 0, 0.700)),url(../img/pexels-pixabay-416320.webp);     
     background-size: cover;
     display: grid;
-    min-height: 300px;
+    height: 600px;
     background-position: center;
     place-content: center;
     justify-items: center;
@@ -262,27 +266,32 @@ body, div, ul, nav, header, footer, a, li, label{
     align-items: center; /* Centra horizontalmente el contenido */
      text-align: center; /* Alinea el texto al centro */
     color: #FFFFFF; /* Color del texto */
-    padding: 10 20px; /* Espaciado interno para evitar que el texto toque los bordes */
+    padding: 100px 20px; /* Espaciado interno para evitar que el texto toque los bordes */
     text-overflow: ellipsis;
 }
 
 .banner__wrapper-container h1{
     font-weight: 700;
-    font-size: calc(3vw + 1.5rem);
-    color: #FFFFFF;    
-    word-wrap: break-word; /* Asegura que el texto se ajuste dentro de su contenedor */
 }
 
 
 
 .banner__wrapper-container h2{
-    font-weight: 400;
-    font-size: calc(0.5vw + 1rem);
+    font-weight: 200;
     font-style: italic;
+}
+
+.banner__wrapper-container h1, .banner__wrapper-container h2{
+    font-size: calc(3vw + 1rem);
+    max-height: 70%;
     color: #FFFFFF;    
+    max-width: 70%; /* Limita la expansión del texto */
     word-wrap: break-word; /* Asegura que el texto se ajuste dentro de su contenedor */
 }
 
+.banner__wrapper-container h2{
+   font-size: calc(2.5vw + 1.5rem);
+}
 
 @media screen and (max-width: 800px){
     .banner__wrapper-container{
@@ -293,82 +302,202 @@ body, div, ul, nav, header, footer, a, li, label{
 
 /* ----- END BANNER SECTION ------ */
 
-:root {
-    --primary-color: #4CAF50;
-    --primary-light: #81C784;
-    --primary-dark: #388E3C;
-    --white: #FFFFFF;
-    --light-gray: #F5F5F5;
-    --text-color: #333333;
-}
+        
 
 
-.events-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 2rem;
-    margin-top: 3rem;
-}
+        .container h1{
+            font-size: calc(1.2vw + 1.5rem);
+        }
+        header {
+            background-color: #ffffff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+        }
+        .logo {
+            max-width: 150px;
+            padding: 15px 0;
+        }
+        .hero {
+            color: white;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: calc(3vw + 1.5rem);
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        .hero p {
+            font-size: 1.2em;
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+        .flyer-section {
+            background-color: #ffffff;
+            padding: 80px 0;
+        }
+        .flyer-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .flyer-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding: 80px 0;
+        }
+        .event-details, .speaker-info {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            padding: 40px;
+            margin-bottom: 40px;
+            flex-basis: calc(50% - 20px);
+        }
+        .event-details h2, .speaker-info h2 {
+            color: #4CAF50;
+            margin-bottom: 20px;
+        }
+        .event-meta {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+        .meta-item {
+            flex-basis: calc(50% - 10px);
+            margin-bottom: 20px;
+        }
+        .meta-item h3 {
+            font-size: 0.9em;
+            color: #888;
+            margin-bottom: 5px;
+        }
+        .meta-item p {
+            font-size: 1.1em;
+            font-weight: 600;
+        }
+        .price-info {
+            background-color: #f1f8e9;
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 30px;
+        }
+        .cta-button {
+            display: inline-block;
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            margin-top: 30px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .cta-button:hover {
+            background-color: #45a049;
+            transform: translateY(-2px);
+        }
+        .speaker-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+        }
+        @media (max-width: 768px) {
+            .event-details, .speaker-info {
+                flex-basis: 100%;
+            }
+        }
 
-.event-card {
-    background-color: var(--white);
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-}
-
-.event-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
-}
-
-.event-card img {
-    width: 100%;
-    height: 200px;
-    object-fit: contain;
-}
-
-.event-card-content {
-    padding: 1.5rem;
-}
-
-.event-card h2 {
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
-    color: var(--primary-color);
-}
-
-.event-card p {
-    margin-bottom: 0.5rem;
-}
-
-.event-card .btn {
-    display: block;
-    text-align: center;
-    margin-top: 1rem;
-    background-color: var(--primary-color);
-    color: var(--white);
-    padding: 0.8rem 1.5rem;
-    border-radius: 25px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-}
-
-.event-card .btn:hover {
-    background-color: var(--primary-dark);
-}
 
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 2rem;
-}
-
-header .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
+        :root {
+            --primary-color: #4CAF50;
+            --primary-light: #81C784;
+            --primary-dark: #388E3C;
+            --white: #FFFFFF;
+            --light-gray: #F5F5F5;
+            --text-color: #333333;
+        }
+        
+        
+        .events-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .event-card {
+            background-color: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .event-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+        }
+        
+        .event-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: contain;
+        }
+        
+        .event-card-content {
+            padding: 1.5rem;
+        }
+        
+        .event-card h2 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+        
+        .event-card p {
+            margin-bottom: 0.5rem;
+        }
+        
+        .event-card .btn {
+            display: block;
+            text-align: center;
+            margin-top: 1rem;
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        
+        .event-card .btn:hover {
+            background-color: var(--primary-dark);
+        }
+        
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
