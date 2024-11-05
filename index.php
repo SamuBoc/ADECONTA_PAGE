@@ -20,6 +20,7 @@
             if (in_array($vista, $modulo)) {
                 include "./inc/navbar_adeconta.php";
                 include "./vistas/".$vista.".php";
+                include "./inc/button_whatsapp.php";
                 include "./inc/footer_adeconta.php";
             } else {
                 // Si la vista no está en el módulo permitido, verifica si el usuario está logueado
