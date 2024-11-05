@@ -2,7 +2,7 @@
 	
 	# Conexion a la base de datos #
 	function conexion(){
-		$host = 'adeconta.org'; // El host donde está alojada tu base de datos en Hostinger
+		$host = 'localhost'; // El host donde está alojada tu base de datos en Hostinger
 		$db = 'u241308002_adeconta'; // Nombre de la base de datos
 		$user = 'u241308002_root'; // Nombre de usuario de la base de datos
 		$pass = 'Salmo19*adeconta'; // Contraseña de la base de datos
