@@ -141,7 +141,7 @@
     overflow: hidden;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     transition: transform 0.3s ease;
-    height: 1020px; /* Altura fija de la tarjeta */
+    height: 620px; /* Altura fija de la tarjeta */
     display: flex;
     flex-direction: column;
 }
