@@ -139,7 +139,7 @@
     overflow: hidden;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     transition: transform 0.3s ease;
-    height: 350px; /* Aumenta la altura de la tarjeta */
+    height: 420px; /* Aumenta la altura de la tarjeta */
     display: flex;
     flex-direction: column;
 }
