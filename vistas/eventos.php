@@ -355,133 +355,73 @@ body, div, ul, nav, header, footer, a, li, label{
             color: var(--text-color);
         }
     
-        /* BARRA DE BUSQUEDA */
+        /* FORMULARIO DE BÚSQUEDA */
+.search-form {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los elementos se acomoden en una nueva línea si es necesario */
+    justify-content: center;
+    gap: 10px;
+    margin: 20px 0;
+}
 
-        /* Estilo para la barra de búsqueda */
-        .search-form {
-            display: flex;
-            flex-direction: column; /* Cambia a columna para permitir apilamiento */
-            align-items: center; /* Centrar horizontalmente */
-            margin-top: 20px; /* Espacio entre el banner y la barra de búsqueda */
-        }
+/* Input de búsqueda sin bordes */
+.search-input {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    font-size: 1rem;
+    background-color: #FFFFFF; /* Fondo gris claro */
+    border-radius: 5px 0 0 5px; /* Solo bordes izquierdo redondeados */
+    color: #333;
+    max-width: 60%;
+    border: 1px solid #d3d3d3; /* Borde gris claro */
+}
 
-        .search-input {
-            max-width: 1000px; /* Ancho máximo */
-            min-width: 50vw;
-            height: 50px; /* Altura de la barra de búsqueda */
-            padding: 0 15px; /* Espaciado interno */
-            border: 1px solid var(--primary-color); /* Borde */
-            border-radius: 10px; /* Bordes redondeados */
-            font-size: 1rem; /* Tamaño de la fuente */
-            transition: border-color 0.3s ease; /* Transición suave para el borde */
-        }
+/* Botón de búsqueda */
+.search-button {
+    padding: 12px 20px;
+    border: none;
+    background-color: #2d8659; /* Verde oscuro elegante */
+    color: white;
+    font-size: 1rem;
+    border-radius: 0 5px 5px 0; /* Solo bordes derecho redondeados */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
 
-        .search-input:focus {
-            border-color: var(--primary-dark); /* Color del borde al enfocar */
-            outline: none; /* Quitar el contorno predeterminado */
-        }
+.search-button:hover {
+    background-color: #246547; /* Verde más oscuro al pasar el ratón */
+}
 
-        .search-wrapper {
-            display: flex;
-            align-items: center; /* Centrar verticalmente */
-        }
+/* Select de filtro */
+.filter-wrapper select {
+    padding: 12px;
+    border: none;
+    background-color: #FFFFFF;
+    font-size: 1rem;
+    color: #333;
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer;
+    flex: 1;
+    border: 1px solid #d3d3d3; /* Borde gris claro */
+}
 
-        .search-button {
-            height: 50px; /* Altura del botón */
-            padding: 0 20px; /* Espaciado interno */
-            border: none; /* Sin borde */
-            border-radius: 10px; /* Bordes redondeados */
-            background-color: #4CAF50; /* Un color verde atractivo */
-            color: white; /* Color del texto */
-            font-size: 1rem; /* Tamaño de la fuente */
-            cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
-            margin-left: 10px; /* Espacio entre la barra de búsqueda y el botón */
-            transition: background-color 0.3s ease; /* Transición suave para el fondo */
-        }
+/* Responsive para pantallas más pequeñas */
+@media (max-width: 600px) {
+    .search-form {
+        flex-direction: column;
+        gap: 5px;
+        align-items: center;
+        justify-content: center;
+    }
 
-        .search-button:hover {
-            background-color: #45a049; /* Color de fondo al pasar el ratón */
-        }
-
-        .clear-search {
-            width: 30px; /* Ancho fijo */
-            height: 30px; /* Alto fijo */
-            border-radius: 50%; /* Borde redondeado (circular) */
-            background-color: #d3d3d3; /* Fondo gris medio */
-            color: black; /* Color de la X */
-            text-decoration: none; /* Sin subrayado */
-            display: flex; /* Para centrar el contenido */
-            align-items: center; /* Centrar verticalmente */
-            justify-content: center; /* Centrar horizontalmente */
-            margin-left: 10px; /* Espacio a la izquierda */
-        }
-        .clear-search:hover {
-            background-color: #b0b0b0; /* Fondo más oscuro al hacer hover */
-        }
-
-        .event-card.event-pasado {
-            opacity: 0.6; /* Otras propiedades que quieras aplicar */
-            /* Otros estilos para eventos pasados */
-        }
-
-        /* FILTRO */
-
-        .filter-wrapper {
-            margin: 20px; /* Espaciado alrededor del contenedor */
-            text-align: right; /* Alinea el contenido a la derecha */
-            color: var(--primary-color);
-            display: flex;
-            flex-direction: column; /* Cambia a columna para permitir apilamiento */
-            align-items: flex-end; /* Alinear a la derecha */
-            font-family: 'Montserrat';
-        }
-
-        .filter-label {
-            font-size: 1rem; /* Tamaño de la fuente para la etiqueta */
-            margin-bottom: 5px; /* Espacio entre la etiqueta y el select */
-            color: var(--primary-color); /* Color de la etiqueta */
-        }
-
-        .filter-wrapper select {
-            padding: 10px; /* Espaciado interno del select */
-            border: 2px solid var(--primary-color); /* Borde del color primario */
-            border-radius: 5px; /* Bordes redondeados */
-            font-size: 14px; /* Tamaño de fuente */
-            background-color: #f9f9f9; /* Color de fondo atractivo */
-            transition: border-color 0.3s, background-color 0.3s; /* Transiciones suaves */
-            width: 100%; /* Ancho del 100% para ser responsivo */
-            max-width: 150px; /* Ancho máximo del select */
-        }
-
-        .filter-wrapper select:focus {
-            outline: none; /* Elimina el contorno predeterminado del select */
-            border-color: var(--primary-dark); /* Cambia el color del borde al enfocar */
-            background-color: #fff; /* Cambia el color de fondo al enfocar */
-        }
-
-        /* Opciones del select */
-        .filter-wrapper option {
-            padding: 10px; /* Espaciado interno para las opciones (no siempre funciona) */
-        }
-
-        /* Responsividad */
-        @media (max-width: 600px) {
-            .search-form {
-                flex-direction: column; /* Apilar elementos en columna */
-                align-items: center; /* Centrar horizontalmente */
-            }
-
-            .filter-wrapper {
-                text-align: center; /* Centrar texto en pantallas pequeñas */
-                margin-top: 10px; /* Espacio adicional en pantallas pequeñas */
-            }
-
-            .filter-wrapper select {
-                width: 100%; /* Ajustar al 100% */
-                max-width: none; /* Quitar límite de ancho */
-                margin-top: 10px; /* Espacio adicional arriba */
-            }
-        }
+    .search-input,
+    .search-button,
+    .filter-wrapper select {
+        width: 60%;
+        border-radius: 5px; /* Bordes redondeados en dispositivos móviles */
+    }
+}
 
 </style>
 
@@ -493,13 +433,8 @@ body, div, ul, nav, header, footer, a, li, label{
 <!-- Barra de búsqueda y filtro -->
 <form class="search-form" method="GET" action="index.php">
     <input type="hidden" name="vista" value="eventos"> <!-- Mantener la vista en eventos -->
-    <div class="search-wrapper">
-        <input type="text" name="search" class="search-input" placeholder="Buscar eventos..." value="<?php echo isset($_GET['search']) ? htmlspecialchars($_GET['search']) : ''; ?>">
-        <button type="submit" class="search-button">Buscar</button>
-        <?php if (isset($_GET['search']) && $_GET['search'] !== ''): ?>
-            <a href="index.php?vista=eventos" class="clear-search">✖</a> <!-- Enlace para limpiar la búsqueda -->
-        <?php endif; ?>
-    </div>
+    <input type="text" name="search" class="search-input" placeholder="Buscar eventos..." value="<?php echo isset($_GET['search']) ? htmlspecialchars($_GET['search']) : ''; ?>">
+    <button type="submit" class="search-button">Buscar</button>
     <div class="filter-wrapper">
         <select name="filter" onchange="this.form.submit()">
             <option value="">Ordenar por</option>
@@ -510,6 +445,7 @@ body, div, ul, nav, header, footer, a, li, label{
         </select>
     </div>
 </form>
+
 
 <?php
 require_once "./php/main.php";
