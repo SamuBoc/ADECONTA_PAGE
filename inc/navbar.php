@@ -63,7 +63,15 @@
                     <a href="index.php?vista=event_search" class="navbar-item">Buscar</a>
                 </div>
             </div>
+            <div class="navbar-item has-dropdown is-hoverable">
+                <a class="navbar-link">Publicaciones</a>
 
+                <div class="navbar-dropdown">
+                    <a href="index.php?vista=publication_new" class="navbar-item">Nuevo</a>
+                    <a href="index.php?vista=publication_list" class="navbar-item">Lista</a>
+                    <a href="index.php?vista=publication_search" class="navbar-item">Buscar</a>
+                </div>
+            </div>
         </div>
 
         <div class="navbar-end">

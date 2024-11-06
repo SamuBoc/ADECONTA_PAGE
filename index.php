@@ -12,7 +12,7 @@
         $vista = isset($_GET['vista']) && !empty($_GET['vista']) ? $_GET['vista'] : "home_landing";
 
         // Lista de módulos disponibles
-        $modulo = ["home_landing", "publicaciones", "eventos", "nosotros", "servicios", "contacto","evento_detalles"];
+        $modulo = ["home_landing", "publicaciones", "eventos", "nosotros", "servicios", "contacto","evento_detalles", "publication_details"];
 
         // Verificar si el archivo de vista existe
         if (is_file("./vistas/".$vista.".php")) {
