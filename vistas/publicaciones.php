@@ -98,28 +98,29 @@
     }
 
     /* ----- Botón de Enlace ----- */
-    .btn {
-        display: inline-block;
-        background-color: #4CAF50;
-        color: white;
-        padding: 10px 20px;
-        border-radius: 5px;
-        text-align: center;
-        font-size: 1rem;
-        text-decoration: none;
-        transition: background-color 0.3s ease, transform 0.2s ease;
-    }
+    /* ----- Botón de Enlace ----- */
+.btn {
+    display: inline-block;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
 
-    .btn:hover {
-        transform: translateY(-3px);
-    }
+.btn:hover {
+    transform: translateY(-3px);
+}
 
-    .btn:active {
-        transform: translateY(1px);
-    }
+.btn:active {
+    transform: translateY(1px);
+}
 
-    /* ----- Grid de Tarjetas de Noticias ----- */
-    .news-grid {
+/* ----- Grid de Tarjetas de Noticias ----- */
+.news-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Hasta 3 tarjetas por fila */
     gap: 1.5rem;
@@ -133,13 +134,14 @@
     transform: translateY(-10px); /* Mueve la tarjeta hacia arriba */
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Aumenta la sombra */
 }
+
 .news-card {
     background-color: #FFFFFF;
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     transition: transform 0.3s ease;
-    height: 420px; /* Aumenta la altura de la tarjeta */
+    height: 620px; /* Altura fija de la tarjeta */
     display: flex;
     flex-direction: column;
 }
@@ -154,7 +156,7 @@
     padding: 1rem;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    flex-grow: 1; /* Ocupa el espacio restante */
 }
 
 .news-card h2 {
@@ -172,6 +174,13 @@
 .news-card .author {
     font-style: italic;
     font-size: 0.9rem;
+}
+
+/* Asegura que el botón se quede abajo de la tarjeta */
+.news-card-content .btn {
+    margin-top: auto; /* Empuja el botón hacia abajo */
+    align-self: center; /* Centra el botón */
+    margin-bottom: 20px; /* Espacio entre el botón y el borde de la tarjeta */
 }
 
 </style>
