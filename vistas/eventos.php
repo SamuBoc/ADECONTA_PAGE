@@ -423,6 +423,10 @@ body, div, ul, nav, header, footer, a, li, label{
     }
 }
 
+.event-pasado{
+    opacity: 0.5;
+}
+
 </style>
 
 <section class="banner__wrapper-container">
