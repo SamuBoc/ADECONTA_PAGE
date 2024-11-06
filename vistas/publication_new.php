@@ -41,7 +41,7 @@
       <div class="column">
         <div class="control">
           <label>Descripcion</label>
-          <input class="input" type="text" name="description" pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ\s0-9.]{4,80}" maxlength="80" placeholder="Ingrese una breve descripcion del articulo" required >
+          <input class="input" type="text" name="description" pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ\s0-9.,]{4,140}" maxlength="140" placeholder="Ingrese una breve descripcion del articulo" required >
         </div>
       </div>
       <div class="column">

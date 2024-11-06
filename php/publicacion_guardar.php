@@ -31,7 +31,7 @@ if(verificar_datos("[a-zA-ZáéíóúÁÉÍÓÚñÑ\s0-9.]{4,40}",$titulo)){
     exit();
 }
 
-if(verificar_datos("[a-zA-ZáéíóúÁÉÍÓÚñÑ\s0-9.]{4,80}",$descripcion)){
+if(verificar_datos("[a-zA-ZáéíóúÁÉÍÓÚñÑ\s0-9.,]{4,140}",$descripcion)){
     echo '
         <div class="notification is-danger is-light">
             <strong>¡Ocurrio un error inesperado!</strong><br>
