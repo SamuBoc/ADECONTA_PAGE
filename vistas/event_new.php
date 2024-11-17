@@ -20,13 +20,13 @@
 			<div class="column">
 					<div class="control">
 						<label>Nombre</label>
-						<input class="input" type="text" name="name" pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ\s0-9.]{0,100}" maxlength="40" placeholder="Ingrese el nombre del evento" required >
+						<input class="input" type="text" name="name" maxlength="40" placeholder="Ingrese el nombre del evento" required >
 					</div>
 				</div>
 				<div class="column">
 					<div class="control">
 						<label>Tipo</label>
-						<input class="input" type="text" name="type" pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ\s0-9.]{0,100}" maxlength="100" placeholder="Ingrese el tipo de evento (ej: conferencia, taller)" required >
+						<input class="input" type="text" name="type" maxlength="100" placeholder="Ingrese el tipo de evento (ej: conferencia, taller)" required >
 					</div>
 				</div>	
 			</div>
@@ -121,7 +121,7 @@
 			<div class="column">
 				<div class="control">
 				<label>Descripcion</label>
-				<input class="input" type="text" name="description" pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ\s0-9.]{0,120}" maxlength="120" placeholder="Ingrese la descripcion del evento" >
+				<input class="input" type="text" name="description" pattern="{0,120}" maxlength="120" placeholder="Ingrese la descripcion del evento" >
 				</div>
 			</div>
 			</div>

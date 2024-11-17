@@ -53,7 +53,7 @@ body, div, ul, nav, header, footer, a, li, label{
     background-image: linear-gradient(rgba(0, 0, 0, 0.700),rgba(0, 0, 0, 0.700)),url(./img/pexels-pixabay-416320.webp);     
     background-size: cover;
     display: grid;
-    height: 85vh;
+    height: 50vh;
     background-position: center;
     place-content: center;
     justify-items: center;
@@ -79,7 +79,7 @@ body, div, ul, nav, header, footer, a, li, label{
 }
 
 .banner__wrapper-container h1, .banner__wrapper-container h2{
-    font-size: calc(3.5vw + 1rem);
+    font-size: calc(3vw + 1rem);
     color: #FFFFFF;    
     word-wrap: break-word; /* Asegura que el texto se ajuste dentro de su contenedor */
 }
@@ -304,7 +304,6 @@ try {
     <section>
         <div class="banner__wrapper-container">
             <h1><?php echo htmlspecialchars($evento['name']); ?></h1>
-            <p><?php echo htmlspecialchars($evento['description']); ?></p>
         </div>
     </section>
     
@@ -320,6 +319,7 @@ try {
         <div class="container-content">
             <div class="event-details">
                 <h2>Detalles del Evento</h2>
+                <p>Descripcion</p>
                 <p class="description"><?php echo $evento["description"];?></p>
                 <div class="event-meta">
                     <div class="meta-item">
@@ -389,9 +389,22 @@ try {
                     </div>
                 </div>
                 <div class="price-info">
-                    <h3>Inversión</h3>
-                    <p>Precio inicial: $<?php echo htmlspecialchars(number_format($evento['cost_initial'], 0, ',', '.')); ?></p>
-                    <p>Precio con descuento: $<?php echo htmlspecialchars(number_format($evento['cost_sub'], 0, ',', '.')); ?></p>
+                                
+                    
+
+                    <?php
+                    
+                    if($evento['cost_initial'] > 0 && $evento['cost_sub'] > 0){
+                    $cost_initial = (number_format($evento['cost_initial'], 0, ',', '.'));
+                    $cost_sub = htmlspecialchars(number_format($evento['cost_sub'], 0, ',', '.')); 
+                    echo "<h3>Inversión</h3>
+                        <p>Precio inicial: $cost_initial</p>
+                    <p>Precio con descuento: $cost_sub</p>
+                    ";  
+                    }else{
+                        echo "Evento gratuito";
+                    }
+                    ?>
                 </div>
                 <a href="<?php echo htmlspecialchars($evento['link']); ?>" class="cta-button" target="_blank">Inscríbete Ahora</a>
             </div>

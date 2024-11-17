@@ -9,7 +9,8 @@ if (isset($_SESSION['id'])) {
     exit;
 }
 
-function validar_dato($campo, $valor, $patron, $mensaje_error) {
+function validar_dato($campo, $valor, $patron, $mensaje_error)
+{
     if (empty($valor) || !preg_match($patron, $valor)) {
         echo "
             <div class='notification is-danger is-light'>
@@ -20,20 +21,37 @@ function validar_dato($campo, $valor, $patron, $mensaje_error) {
     }
 }
 
-// Definimos los datos a validar
+// Actualizamos la validación del campo 'name' para permitir cualquier carácter con límite de tamaño
 $datos_a_validar = [
-    ["campo" => "name", "valor" => $_POST['name'], "patron" => "/^[a-zA-ZáéíóúÁÉÍÓÚñÑ ]{3,40}$/", "mensaje" => "El NOMBRE debe contener solo letras y tener entre 3 y 40 caracteres"],
-    ["campo" => "type", "valor" => $_POST['type'], "patron" => "/^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]{3,100}$/", "mensaje" => "El TIPO solo puede contener letras y debe tener entre 3 y 100 caracteres"],
-    ["campo" => "cost_sub", "valor" => $_POST['cost_sub'], "patron" => "/^\d+$/", "mensaje" => "El COSTO para afiliados debe ser un número válido"],
-    ["campo" => "cost_initial", "valor" => $_POST['cost_initial'], "patron" => "/^\d+$/", "mensaje" => "El COSTO normal debe ser un número válido"]
+    ["campo" => "name", "valor" => $_POST['name'], "patron" => "/^.{3,40}$/", "mensaje" => "El NOMBRE debe tener entre 3 y 40 caracteres"],
+    ["campo" => "type", "valor" => $_POST['type'], "patron" => "/^.{3,40}$/", "mensaje" => "El TIPO solo puede contener letras y debe tener entre 3 y 100 caracteres"]
 ];
 
+
 foreach ($datos_a_validar as $dato) {
-    validar_dato($dato['campo'], $dato['valor'], $dato['patron'], $dato['mensaje']);    
+    validar_dato($dato['campo'], $dato['valor'], $dato['patron'], $dato['mensaje']);
+}
+
+if (!is_numeric($_POST['cost_sub'])) {
+    echo "
+            <div class='notification is-danger is-light'>
+                <strong>¡Ocurrió un error inesperado!</strong><br>
+                El costo afiliado no tiene el formato valido
+            </div>";
+    exit();
+}
+
+if (!is_numeric($_POST['cost_initial'])) {
+    echo "
+            <div class='notification is-danger is-light'>
+                <strong>¡Ocurrió un error inesperado!</strong><br>
+                El costo inicial no tiene el formato valido
+            </div>";
+    exit();
 }
 
 // Validaciones adicionales
-if(!isset($_POST['speaker_option'])) {
+if (!isset($_POST['speaker_option'])) {
     echo "
         <div class='notification is-danger is-light'>
             <strong>¡Ocurrió un error inesperado!</strong><br>
@@ -42,7 +60,7 @@ if(!isset($_POST['speaker_option'])) {
     exit();
 }
 
-if(!isset($_POST['timestamp'])) {
+if (!isset($_POST['timestamp'])) {
     echo "
         <div class='notification is-danger is-light'>
             <strong>¡Ocurrió un error inesperado!</strong><br>
@@ -51,7 +69,7 @@ if(!isset($_POST['timestamp'])) {
     exit();
 }
 
-if(!isset($_POST['start_time'])) {
+if (!isset($_POST['start_time'])) {
     echo "
         <div class='notification is-danger is-light'>
             <strong>¡Ocurrió un error inesperado!</strong><br>
@@ -137,7 +155,7 @@ if ($_FILES['poster_file']['name'] != "" && $_FILES['poster_file']['size'] > 0) 
             </div>";
         exit();
     }
-    
+
     $marcs['photo'] = $foto;
 }
 
@@ -164,17 +182,17 @@ if ($stms->rowCount() == 1) {
             <strong>¡EVENTO REGISTRADO!</strong><br>
             El evento se registró con éxito
         </div>";
-    
+
     // Insertar en la tabla intermedia speaker_event
     $insert_speaker = $conexion->prepare("INSERT INTO speaker_event (event_id, speaker_id) VALUES (:event_id, :speaker_id)");
-    
+
     foreach ($_POST['speaker_option'] as $speaker_id) {
         $insert_speaker->execute([
             ':event_id' => $new_event_id,
             ':speaker_id' => $speaker_id
         ]);
     }
-    
+
 } else {
     echo "
         <div class='notification is-danger is-light'>
