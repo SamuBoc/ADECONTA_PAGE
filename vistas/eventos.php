@@ -739,7 +739,7 @@ try {
         overflow: hidden;
         margin: 1rem auto;
         max-width: 1200px;
-        height: 420px;
+        height: 500px;
         /* Altura fija más compacta */
     }
 
