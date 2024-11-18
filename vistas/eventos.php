@@ -590,13 +590,22 @@ $consulta_datos = "
     LEFT JOIN ubication u ON e.location_id = u.id  
     LEFT JOIN speaker_event se ON e.id = se.event_id
     LEFT JOIN speakers s ON se.speaker_id = s.id
-    WHERE (e.name LIKE :busqueda OR e.type LIKE :busqueda)
+    WHERE 
+        (e.name LIKE :busqueda OR e.type LIKE :busqueda
+        OR CAST(YEAR(e.date_initial) AS CHAR) LIKE :busqueda
+        OR CAST(MONTH(e.date_initial) AS CHAR) LIKE :busqueda
+        OR CAST(DAY(e.date_initial) AS CHAR) LIKE :busqueda
+        OR CAST(e.date_initial AS CHAR) LIKE :busqueda) 
     GROUP BY e.id
     $orden
     LIMIT :inicio, :registros
 ";
 
-$consulta_total = "SELECT COUNT(id) FROM events WHERE name LIKE :busqueda OR type LIKE :busqueda";
+$consulta_total = "SELECT COUNT(id) FROM events WHERE name LIKE :busqueda OR type LIKE :busqueda
+    OR CAST(YEAR(date_initial) AS CHAR) LIKE :busqueda
+    OR CAST(MONTH(date_initial) AS CHAR) LIKE :busqueda
+    OR CAST(DAY(date_initial) AS CHAR) LIKE :busqueda
+    OR CAST(date_initial AS CHAR) LIKE :busqueda";
 
 try {
     // Preparar y ejecutar la consulta de datos
@@ -739,7 +748,7 @@ try {
         overflow: hidden;
         margin: 1rem auto;
         max-width: 1200px;
-        height: 500px;
+        height: 280px;
         /* Altura fija más compacta */
     }
 
@@ -940,7 +949,7 @@ foreach ($eventos_por_ano as $anio => $eventos) {
     echo '<h3 class="display-event-title">' . htmlspecialchars($primer_evento['name']) . '</h3>';
     echo '<p class="display-event-description">' . htmlspecialchars($primer_evento['description']) . '</p>';
     echo '<p class="display-event-date">' . htmlspecialchars($primer_evento['date_initial']) . '</p>';
-    echo '<a href="#' . htmlspecialchars($anio) . '" class="display-event-button">Ver todos los eventos</a>';
+    echo '<a href="index.php?vista=eventos&search=' . htmlspecialchars($anio) . '&date=&filter=" class="display-event-button">Ver todos los eventos</a>';
     echo '</div>';
 
     echo '</div>';
