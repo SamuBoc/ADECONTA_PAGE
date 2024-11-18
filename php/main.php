@@ -1,25 +1,25 @@
 <?php
 	
 	# Conexion a la base de datos #
-	//    function conexion(){
-	// 	 $host = 'localhost'; // El host donde está alojada tu base de datos en Hostinger
-	// 	 $db = 'u241308002_adeconta'; // Nombre de la base de datos
-	// 	 $user = 'u241308002_root'; // Nombre de usuario de la base de datos
-	// 	 $pass = 'Salmo19*adeconta'; // Contraseña de la base de datos
-	// 	 try {
-	// 	 $pdo = new PDO("mysql:host=$host;dbname=$db", $user, $pass);
-	// 	 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); // Modo de errores de PDO
-	// 	 return $pdo;
-	// 	 } catch (PDOException $e) {
-	// 	 echo "Error en la conexión: " . $e->getMessage();
-	// 	 return null;
-	// 	 }
-	//    }
+	    function conexion(){
+	 	 $host = 'localhost'; // El host donde está alojada tu base de datos en Hostinger
+	 	 $db = 'u241308002_adeconta'; // Nombre de la base de datos
+	 	 $user = 'u241308002_root'; // Nombre de usuario de la base de datos
+	 	 $pass = 'Salmo19*adeconta'; // Contraseña de la base de datos
+	 	 try {
+	 	 $pdo = new PDO("mysql:host=$host;dbname=$db", $user, $pass);
+	 	 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); // Modo de errores de PDO
+	 	 return $pdo;
+	 	 } catch (PDOException $e) {
+	 	 echo "Error en la conexión: " . $e->getMessage();
+	 	 return null;
+	 	 }
+	    }
 	
-	  function conexion(){
-	  	$pdo = new PDO('mysql:host=localhost;dbname=adeconta', 'root', '');
-	  	return $pdo;
-	  }
+	//  function conexion(){
+	//  	$pdo = new PDO('mysql:host=localhost;dbname=adeconta', 'root', '');
+	//  	return $pdo;
+	//  }
 
 
 	# Verificar datos #
