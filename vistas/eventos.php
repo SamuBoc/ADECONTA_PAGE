@@ -640,3 +640,194 @@ try {
 } catch (PDOException $e) {
     echo "Error: " . $e->getMessage();
 }
+
+?>
+<style>
+    /* ----- NUEVAS CLASES PARA LOS EVENTOS ----- */
+
+    .year-container {
+        margin: 20px 0;
+    }
+
+    .events-year-container {
+        margin-bottom: 40px;
+    }
+
+    .year-title {
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+        color: var(--primary-color);
+    }
+
+    .events-grid-container {
+        display: flex;
+        flex-direction: column; /* Coloca los eventos en una columna */
+        gap: 20px; /* Espaciado entre eventos */
+    }
+
+    .event-item-container {
+        display: flex;
+        flex-direction: row; /* Imagen e información lado a lado */
+        gap: 15px;
+        border: 1px solid #ccc;
+        padding: 10px;
+        border-radius: 8px;
+        background-color: #f9f9f9;
+        width: 100%; /* Ocupa el 100% del contenedor */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .event-item-info {
+        flex: 2; /* La descripción ocupa más espacio */
+    }
+
+    .event-item-photo {
+        flex: 1; /* La imagen ocupa menos espacio */
+    }
+
+    .event-item-photo img {
+        max-width: 100%;
+        border-radius: 5px;
+    }
+
+    /* ----- PAGINADOR NO SE MODIFICA ----- */
+
+    /* ----- FORMULARIO DE BÚSQUEDA (SIN CAMBIOS) ----- */
+    .search-form {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        margin: 20px 0;
+    }
+
+    .search-input {
+        flex: 1;
+        padding: 12px;
+        border: none;
+        font-size: 1rem;
+        background-color: #FFFFFF;
+        border-radius: 5px 0 0 5px;
+        color: #333;
+        max-width: 60%;
+        border: 1px solid #d3d3d3;
+    }
+
+    .search-button {
+        padding: 12px 20px;
+        border: none;
+        background-color: #2d8659;
+        color: white;
+        font-size: 1rem;
+        border-radius: 0 5px 5px 0;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .search-button:hover {
+        background-color: #246547;
+    }
+
+    .filter-wrapper select {
+        padding: 12px;
+        border: none;
+        background-color: #FFFFFF;
+        font-size: 1rem;
+        color: #333;
+        border-radius: 5px;
+        cursor: pointer;
+        flex: 1;
+        border: 1px solid #d3d3d3;
+    }
+
+    @media (max-width: 600px) {
+        .search-form {
+            flex-direction: column;
+            gap: 5px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .search-input,
+        .search-button,
+        .filter-wrapper select {
+            width: 60%;
+            border-radius: 5px;
+        }
+    }
+
+    .event-pasado {
+        opacity: 0.5;
+    }
+</style>
+
+
+<?php
+$eventos_por_ano = []; 
+
+foreach ($datos as $rows) {
+    $fecha = new DateTime($rows['date_initial']);
+    $anio = $fecha->format('Y');
+
+    if (!isset($eventos_por_ano[$anio])) {
+        $eventos_por_ano[$anio] = [];
+    }
+
+    $eventos_por_ano[$anio][] = $rows;
+}
+
+echo "<section>";
+echo '<div class="container">';
+
+foreach ($eventos_por_ano as $anio => $eventos) {
+    echo '<div class="events-year-container">';
+    echo '<h2 class="year-title">' . htmlspecialchars($anio) . '</h2>';
+
+    // Contenedor para los eventos del año
+    echo '<div class="events-grid-container">';
+
+    foreach ($eventos as $evento) {
+        if (!isset($evento['photo'])) {
+            $evento['photo'] = 'pexels-mikhail-nilov-6592658.jpg';
+        }
+
+        // Contenedor individual de cada evento
+        echo '<div class="event-item-container">';
+        echo '<div class="event-item-info">';
+        echo '<p>' . htmlspecialchars($evento['description']) . '</p>';
+        echo '<p>' . htmlspecialchars($evento['date_initial']) . '</p>';
+        echo '</div>';  
+
+        echo '<div class="event-item-photo">';
+        echo '<img src="./img/events/' . htmlspecialchars($evento["photo"]) . '" alt="' . htmlspecialchars($evento['name']) . '">';
+        echo '</div>';
+        echo '</div>'; // Cierra el contenedor individual del evento
+    }
+
+    echo '</div>'; // Cierra la grilla de eventos
+    echo '</div>'; // Cierra el contenedor del año
+}
+
+echo "</div>";
+echo "</section>";
+?>
+
+
+<script>
+    document.querySelectorAll('.mostrar-mas-btn').forEach(button => {
+    button.addEventListener('click', function() {
+        const eventosOcultos = this.previousElementSibling;
+        const eventos = eventosOcultos.querySelectorAll('.evento-card');
+        
+        eventos.forEach(evento => {
+            evento.style.display = 'flex';
+        });
+        
+        this.style.display = 'none'; // Ocultar el botón una vez se muestran los eventos
+    });
+});
+
+    const changeColor = document.getElementById('')
+
+</script>
