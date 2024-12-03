@@ -981,11 +981,7 @@ if ($total >= 1) {
 echo '<button class="carousel-button left" onclick="moveCarousel(-1)">&#10094;</button>';
 echo '<button class="carousel-button right" onclick="moveCarousel(1)">&#10095;</button>';
 
-} else {
-    echo '<div class="event-card">
-            <p>No hay eventos disponibles</p>
-          </div>';
-}
+} 
 
 echo '  </div>
       </div>
