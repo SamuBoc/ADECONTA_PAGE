@@ -69,7 +69,6 @@
                 <div class="navbar-dropdown">
                     <a href="index.php?vista=publication_new" class="navbar-item">Nuevo</a>
                     <a href="index.php?vista=publication_list" class="navbar-item">Lista</a>
-                    <a href="index.php?vista=publication_search" class="navbar-item">Buscar</a>
                 </div>
             </div>
         </div>
