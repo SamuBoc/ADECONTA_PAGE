@@ -975,13 +975,7 @@ if ($total >= 1) {
                 </div>
             </div>';
     }
-} else {
-    echo '<div class="event-card">
-            <p>No hay eventos disponibles</p>
-          </div>';
-}
-
-echo '  </div>';  // Fin del contenedor de tarjetas
+    echo '  </div>';  // Fin del contenedor de tarjetas
 
 // Botones de navegación del carrousel
 echo '<button class="carousel-button left" onclick="moveCarousel(-1)">&#10094;</button>';
@@ -990,6 +984,8 @@ echo '<button class="carousel-button right" onclick="moveCarousel(1)">&#10095;</
 echo '  </div>
       </div>
       </section>';
+} 
+
 ?>
 
     <!-- Start Service -->
