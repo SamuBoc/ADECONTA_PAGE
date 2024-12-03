@@ -77,6 +77,17 @@ if (!isset($_POST['start_time'])) {
     exit();
 }
 
+$view = isset($_POST['view']) ? $_POST['view'] : '0';
+
+if (!in_array($view, ['0', '1'])) {
+    echo "
+        <div class='notification is-danger is-light'>
+            <strong>¡Ocurrió un error inesperado!</strong><br>
+            El campo Destacado no tiene un valor válido.
+        </div>";
+    exit();
+}
+
 // Preparar los datos
 $marcs = [
     "id" => $_POST['event_id_up'],
@@ -93,6 +104,7 @@ $marcs = [
     "platform_id" => null,
     "cost_initial" => $_POST['cost_initial'] ?? null,
     "cost_sub" => $_POST['cost_sub'] ?? null,
+    "view" => $_POST['view'],
 ];
 
 // Validar y actualizar los datos
@@ -177,7 +189,8 @@ $stms = $conexion->prepare(
          location_id = :location_id, 
          platform_id = :platform_id, 
          cost_initial = :cost_initial, 
-         cost_sub = :cost_sub 
+         cost_sub = :cost_sub, 
+         view = :view
      WHERE id = :id'
 );
 

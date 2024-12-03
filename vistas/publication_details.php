@@ -95,4 +95,6 @@ if ($statement->rowCount() > 0) {
     ?>
 </div>
 
-
+<?php
+    include ("prueba-pagina.htm");
+?>

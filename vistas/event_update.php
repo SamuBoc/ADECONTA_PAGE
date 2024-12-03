@@ -145,6 +145,17 @@
 
         <div class="columns">
             <div class="column is is-narrow">
+            <div class="field">
+					<label>Destacado</label>
+					<div class="control">
+						<label class="radio">
+							<input type="radio" name="view" value="1"> Sí
+						</label>
+						<label class="radio">
+							<input type="radio" name="view" value="0" checked> No
+						</label>
+					</div>
+				</div>
                 <div class="field">
                     <label>Afiche</label>
                     <div class="control">

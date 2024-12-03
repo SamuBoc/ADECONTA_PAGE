@@ -80,6 +80,7 @@ try {
                     <th>Costo F.</th>
                     <th>Dirección/Plataforma</th>
                     <th>Ponentes</th>
+                    <th>Destacado</th> <!-- Nueva columna para "Destacado" -->
                     <th>Opciones</th>
                 </tr>
             </thead>
@@ -90,6 +91,7 @@ try {
         $contador = $inicio + 1;
         foreach ($datos as $rows) {
             $speaker_names = htmlspecialchars($rows['speaker_names'] ?? 'No hay ponentes');  // Manejar si no hay ponentes
+            $is_featured = $rows['view'] ? 'Sí' : 'No'; // Mostrar "Sí" o "No" según el valor de is_featured
             
             $tabla .= '
                 <tr class="has-text-centered">
@@ -103,6 +105,7 @@ try {
                     <td>$' . number_format($rows['cost_sub'], 2) . '</td>
                     <td>' . htmlspecialchars($rows['ubication_address'] ?: $rows['platform_name']) . '</td>
                     <td>' . $speaker_names . '</td>
+                    <td>' . $is_featured . '</td> <!-- Mostrar si es destacado -->
                     <td>
                         <a href="index.php?vista=event_update&event_id_up=' . $rows['id'] . '" class="button is-success is-rounded is-small">Actualizar</a>
                         <a href="' . $url . $pagina . '&event_id_del=' . $rows['id'] . '" class="button is-danger is-rounded is-small">Eliminar</a>
@@ -114,7 +117,7 @@ try {
     } else {
         $tabla .= '
             <tr class="has-text-centered">
-                <td colspan="11">No hay registros en el sistema</td>
+                <td colspan="12">No hay registros en el sistema</td>
             </tr>
         ';
     }
@@ -132,4 +135,5 @@ try {
 
 $conexion = null;
 echo $tabla;
+
 ?>

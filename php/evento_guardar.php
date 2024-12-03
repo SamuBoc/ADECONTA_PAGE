@@ -78,6 +78,17 @@ if (!isset($_POST['start_time'])) {
     exit();
 }
 
+$view = isset($_POST['view']) ? $_POST['view'] : '0';
+
+if (!in_array($view, ['0', '1'])) {
+    echo "
+        <div class='notification is-danger is-light'>
+            <strong>¡Ocurrió un error inesperado!</strong><br>
+            El campo Destacado no tiene un valor válido.
+        </div>";
+    exit();
+}
+
 // Preparar los datos
 $marcs = [
     "name" => $_POST['name'] ?? null,
@@ -93,6 +104,7 @@ $marcs = [
     "platform_id" => null,
     "cost_initial" => $_POST['cost_initial'] ?? null,
     "cost_sub" => $_POST['cost_sub'] ?? null,
+    "view" => $_POST['view'],
 ];
 
 // Validar y actualizar los datos
@@ -169,8 +181,8 @@ $new_event_id = $max_event_id + 1;
 
 // Insertar el nuevo evento
 $stms = $conexion->prepare(
-    'INSERT INTO events(id, name, description, date_initial, start_time, end_time, type, photo, link, user_id, location_id, platform_id, cost_initial, cost_sub) 
-    VALUES(:id, :name, :description, :date_initial, :start_time, :end_time, :type, :photo, :link, :user_id, :location_id, :platform_id, :cost_initial, :cost_sub)'
+    'INSERT INTO events(id, name, description, date_initial, start_time, end_time, type, photo, link, user_id, location_id, platform_id, cost_initial, cost_sub, view) 
+     VALUES(:id, :name, :description, :date_initial, :start_time, :end_time, :type, :photo, :link, :user_id, :location_id, :platform_id, :cost_initial, :cost_sub, :view)'
 );
 $marcs['id'] = $new_event_id; // Asignar el nuevo ID al evento
 
