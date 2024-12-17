@@ -912,13 +912,19 @@ $datos = $stmt->fetchAll(PDO::FETCH_ASSOC);
 // Contar la cantidad de eventos
 $total = count($datos);
 
-echo '<section>
+
+if ($total >= 1) { 
+
+    echo '<section>
         <div class="container">
             <div class="events-grid-container">'; // Contenedor del carrousel
 
-echo '<div class="events-grid">';  // Contenedor de tarjetas
+    echo '<h1 class="tittle_carrucel">Eventos principales</h1>';
 
-if ($total >= 1) { 
+
+    echo '<div class="events-grid">';  // Contenedor de tarjetas
+
+
     foreach ($datos as $rows) {
         $speaker_names = htmlspecialchars($rows['speaker_names'] ?? 'No hay ponentes');  
 
@@ -981,11 +987,12 @@ if ($total >= 1) {
 echo '<button class="carousel-button left" onclick="moveCarousel(-1)">&#10094;</button>';
 echo '<button class="carousel-button right" onclick="moveCarousel(1)">&#10095;</button>';
 
-} 
-
 echo '  </div>
       </div>
       </section>';
+    
+} 
+
 
 ?>
 
